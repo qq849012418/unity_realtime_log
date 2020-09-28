@@ -38,12 +38,12 @@ def tail_thread(tail_file):
 def unity_log_tail(txt):
     print(txt)
 
-def build(method, unity_path, project_path, log_path):
+def build(unity_path, project_path, log_path, input_path, output_path):
     """
     call unity process to build
     """
 
-    build_cmd = [unity_path, '-silent-crashes','-batchmode', '-projectPath', project_path, '-nographics', '-executeMethod', method, '-logFile', log_path, '-quit', '-inputpath','D:\\Resource\\3dmodel\\AssemblyPlannerDataset\\[CATIA]Honda-CRF250x\\CRF250x\\CRF250x.CATProduct']
+    build_cmd = [unity_path, '-silent-crashes','-batchmode', '-projectPath', project_path, '-nographics', '-executeMethod', 'WJGMain.import', '-logFile', log_path, '-quit', '-inputpath',input_path,'-outputpath',output_path]
     print( 'Unity running ....')
 
     if os.path.exists(log_path):
@@ -81,8 +81,9 @@ if __name__ == '__main__':
 
     parser.add_argument('-unity', required=True, help=u'Unity executable file path')
     parser.add_argument('-project', required=True, help=u'Unity project path')
-    parser.add_argument('-method', required=True, help=u'Unity method to call')
+    parser.add_argument('-input', required=True, help=u'Full Path of input model')
+    parser.add_argument('-output', required=True, help=u'Save Path of bundle')
 
     args = parser.parse_args()
-    #build(args.method, fullpath(args.unity), fullpath(args.project), fullpath(os.path.join(args.project, '__kellylog.txt')))
-    build('WJGMain.import', fullpath('D:\\Software\\Unity\\2019.4.0f1\\Editor\\Unity.exe'), fullpath('D:\\code\\unity\\PIXYZ2019CRACKTEST'), fullpath('D:\\code\\unity\\PIXYZ2019CRACKTEST\\__kellylog.txt'))
+    build(fullpath(args.unity), fullpath(args.project), fullpath(os.path.join(args.project, '__keensterlog.txt')),fullpath(args.input),fullpath(args.output))
+    #build(fullpath('D:\\Software\\Unity\\2019.4.0f1\\Editor\\Unity.exe'), fullpath('D:\\code\\unity\\PIXYZ2019CRACKTEST'), fullpath('D:\\code\\unity\\PIXYZ2019CRACKTEST\\__kellylog.txt'))
