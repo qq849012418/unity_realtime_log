@@ -45,3 +45,10 @@ The original project is only suitable for python 2, so I rewrite some code to ma
 .\unity_realtime_log.bat -unity D:\Software\Unity\2019.4.0f1\Editor\Unity.exe -project D:\code\unity\PIXYZ2019CRACKTEST -input D:\Resource\3dmodel\AssemblyPlannerDataset\[CATIA]Bosch-Starter-Motor\StarterMotor\StarterMotor.CATProduct -output D:\code\unity\PIXYZ2019CRACKTEST\ab
 ```
 
+
+
+## FOR INDEPENDENT USE ON ANOTHER PC WITHOUT PYTHON ENVIRONMENT
+
+You can use pyinstaller.
+
+please refer to [this blog](http://keenster.cn/2020/11/22/PYINSTALLER/).
